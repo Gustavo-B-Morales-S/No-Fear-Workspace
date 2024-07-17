@@ -3,9 +3,9 @@
 This project aims to provide a simple tool for backing up multiple reusable configuration files in an 
 automated way, bringing them to a centralized repository and enabling the user to install them on their system.
 
-## Description of "update_settings.sh
+## Update Settings
 
-This Bash script automates the backup of specific files from their origin directories to target directories.
+This bash script (update_settings.sh) automates the backup of specific files from their origin directories to target directories.
 It ensures that files are copied from their respective locations to designated backup folders.
 
 ## Functions
@@ -32,11 +32,11 @@ To use the script:
 source update_settings.sh
 ```
 
-## Script workflow 
+## Script Workflow 
 
 The following Mermaid diagram illustrates the workflow of the script:
 
-```graph TD;
+```graph TD
     A[Start] --> B(Check Target Directory)
     B -->|Exists| C(Copy Files from Source)
     B -->|Does not exist| D(Create Target Directory)
@@ -45,7 +45,6 @@ The following Mermaid diagram illustrates the workflow of the script:
     E --> F(Confirm Successful Execution)
     F --> G(End)
 ```
-
 
 ## Setup
 
@@ -70,27 +69,24 @@ Modify the script to specify the files and directories you want to backup.
 
 1 - Declare your variable and assign the source path of your configuration file.
 
-Ex:
 ```bash
 file_source_path=~/Example-App/Settings/app_settings_file.txt
 ```
 
 2 - Declare your variable and assign the target directory, where the configuration file will be sent
 
-Ex:
 ```bash
 target_directory=$(get_in_workspace_target_directory_path "My-App-Settings-Folder")
 ```
 
 3 - Add the source variable to sources=() and the target directory to targets=()
 
-Ex:
 ```bash
 sources=("$file_source_path")
 target=("$target_directory")
 ```
 
-## What does it look like (The content of this example is available in the repository)
+## Demonstration
 
 
 ```bash
