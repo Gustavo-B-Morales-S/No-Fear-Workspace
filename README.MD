@@ -36,10 +36,11 @@ source update_settings.sh
 
 The following Mermaid diagram illustrates the workflow of the script:
 
-```graph TD
+```mermaid
+graph TD;
     A[Start] --> B(Check Target Directory)
-    B -->|Exists| C(Copy Files from Source)
-    B -->|Does not exist| D(Create Target Directory)
+    B --> |Exists| C(Copy Files from Source)
+    B --> |Does not exist| D(Create Target Directory)
     D --> C
     C --> E(Paste Files into Target Directory)
     E --> F(Confirm Successful Execution)
